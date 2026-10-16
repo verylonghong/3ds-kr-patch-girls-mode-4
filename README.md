@@ -16,6 +16,17 @@
 - 상점의 `사입하러 가기` 버튼, 날짜 전환 요일과 일정 버튼의 글자색·외곽선을 보정했습니다.
 - 게임 아이콘을 반영했습니다. 게임 실행 코드 `code.bin`은 변경하지 않았습니다.
 
+## 스크린샷
+
+<p align="center">
+  <img src="screenshots/gm4_01.png" width="400" alt="게임 화면 1">
+  <img src="screenshots/gm4_02.png" width="400" alt="게임 화면 2">
+</p>
+<p align="center">
+  <img src="screenshots/gm4_03.png" width="400" alt="게임 화면 3">
+  <img src="screenshots/gm4_04.png" width="400" alt="게임 화면 4">
+</p>
+
 ## 다운로드
 
 [버전 0.5 릴리스](https://github.com/verylonghong/3ds-kr-patch-girls-mode-4/releases/tag/v0.5)에서 다음 두 가지 패치를 제공합니다.
