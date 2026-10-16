@@ -89,6 +89,9 @@ def main():
 
     release = api(release_url)
     verify(release)
+    notes = Path("RELEASE_NOTES.md").read_text(encoding="utf-8")
+    if release.get("body") != notes:
+        release = api(release_url, "PATCH", {"body": notes})
     if release["draft"]:
         release = api(release_url, "PATCH", {"draft": False})
     verify(release)
