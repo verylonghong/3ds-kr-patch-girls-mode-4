@@ -1,12 +1,6 @@
 name: Publish Korean patch 0.5
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - 'patches/0.5/**'
-      - 'scripts/publish_0_5.py'
-      - '.github/workflows/release-0.5.yml'
   workflow_dispatch:
 
 permissions:
@@ -22,6 +16,14 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
+      - name: Download existing release assets for verification
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: >-
+          gh release download v0.5 --repo "$GITHUB_REPOSITORY"
+          --dir patches/0.5
+          --pattern GS4_Korean_v0.5_From_Japan_3DS.xdelta
+          --pattern GS4_Korean_Repack_v0.5.zip
       - name: Verify assets and publish v0.5
         env:
           GH_TOKEN: ${{ github.token }}

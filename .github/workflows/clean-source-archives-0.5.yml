@@ -1,0 +1,26 @@
+name: Remove patch payloads from v0.5 source archives
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/clean-source-archives-0.5.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-0.5
+  cancel-in-progress: false
+
+jobs:
+  clean-source-archives:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Update the source tag and preserve release attachments
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/clean_source_archives_0_5.py
