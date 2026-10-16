@@ -1,0 +1,28 @@
+name: Publish Korean patch 0.5
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'patches/0.5/**'
+      - 'scripts/publish_0_5.py'
+      - '.github/workflows/release-0.5.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-0.5
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify assets and publish v0.5
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/publish_0_5.py
