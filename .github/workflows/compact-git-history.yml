@@ -1,0 +1,49 @@
+name: Remove historical patch payloads
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/compact-git-history.yml
+      - scripts/compact_git_history.py
+
+permissions:
+  contents: write
+
+concurrency:
+  group: git-history-maintenance
+  cancel-in-progress: false
+
+jobs:
+  compact:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Install history filtering tool
+        run: python3 -m pip install git-filter-repo==2.47.0
+      - name: Back up refs, history and release metadata
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/compact_git_history.py --prepare
+      - name: Save the verified pre-cleanup history backup
+        uses: actions/upload-artifact@v4
+        with:
+          name: git-history-before-cleanup
+          path: git-history-backup/
+          retention-days: 30
+          if-no-files-found: error
+      - name: Filter patch files and update refs with exact leases
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/compact_git_history.py --rewrite
+      - name: Save the verification report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: git-history-cleanup-verification
+          path: git-history-report/
+          retention-days: 30
+          if-no-files-found: warn
