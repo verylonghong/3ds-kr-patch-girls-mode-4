@@ -1,8 +1,8 @@
-# 걸스 모드 4 한국어 패치 0.5
+# 걸스 모드 4 한국어 패치 0.6
 
 일본판 **Girls Mode 4 - Star & Stylist**의 한국어 패치입니다.
 
-- 배포 버전: **0.5**
+- 배포 버전: **0.6**
 - 한글화: **롱홍**
 - 대상 타이틀 ID: `000400000019F600`
 
@@ -10,7 +10,16 @@
 
 - 번역 메시지 71,203개를 반영했습니다.
 - 나눔스퀘어라운드 기반 한글 글꼴 6개를 반영했습니다.
-- 이미지 491개의 한글화·보정을 반영했습니다.
+- 이미지 505개의 한글화·보정을 반영했습니다.
+
+## 0.6 변경 요약
+
+- 패션 용어·아이템 표기·띄어쓰기와 일부 대사를 정리했습니다.
+- 미키피디아 링크와 강조 범위, 호칭 앞 공백을 수정했습니다.
+- 포스터·공연 문구·「프로」 도장을 한글화하고, 일부 UI 이미지와 후리가나 표시를 정리했습니다.
+- 보조 글꼴의 누락 글자를 보완하고 스크린샷을 최신 파일로 갱신했습니다.
+
+[변경 내역](CHANGELOG.md) · [패치 파일 SHA-256](SHA256SUMS.txt)
 
 ## 스크린샷
 
@@ -25,12 +34,12 @@
 
 ## 다운로드
 
-[버전 0.5 릴리스](https://github.com/verylonghong/3ds-kr-patch-girls-mode-4/releases/tag/v0.5)에서 다음 두 가지 패치를 제공합니다.
+[버전 0.6 릴리스](https://github.com/verylonghong/3ds-kr-patch-girls-mode-4/releases/tag/v0.6)에서 다음 두 가지 패치를 제공합니다.
 
 | 파일 | 용도 | 크기 |
 | --- | --- | ---: |
-| `GS4_Korean_v0.5_From_Japan_3DS.xdelta` | 지정한 원본 `.3ds`에 적용 | 4,769,398바이트 |
-| `GS4_Korean_Repack_v0.5.zip` | RomFS·ExeFS 교체 후 재패킹 | 12,972,252바이트 |
+| `GS4_Korean_v0.6_From_Japan_3DS.xdelta` | 지정한 원본 `.3ds`에 적용 | 7,394,563바이트 |
+| `GS4_Korean_Repack_v0.6.zip` | RomFS·ExeFS 교체 후 재패킹 | 57,266,196바이트 |
 
 ## 기준 원본과 SHA-256
 
@@ -57,27 +66,27 @@ Get-FileHash -Algorithm SHA256 -LiteralPath 'Girls Mode 4 - Star & Stylist (Japa
 xdelta3로 다음과 같이 적용합니다.
 
 ```powershell
-xdelta3.exe -d -s "Girls Mode 4 - Star & Stylist (Japan).3ds" "GS4_Korean_v0.5_From_Japan_3DS.xdelta" "GS4_Korean_v0.5.3ds"
+xdelta3.exe -d -s "Girls Mode 4 - Star & Stylist (Japan).3ds" "GS4_Korean_v0.6_From_Japan_3DS.xdelta" "GS4_Korean_v0.6_WithManual.3ds"
 ```
 
-결과 파일은 **3DS 파일**입니다.
+결과 파일은 **원본 전자설명서를 포함한 3DS 파일**입니다.
 
-- 결과 파일명: `GS4_Korean_v0.5.3ds`
-- 결과 크기: **824,578,048바이트**
+- 결과 파일명: `GS4_Korean_v0.6_WithManual.3ds`
+- 결과 크기: **825,569,280바이트**
 - 결과 SHA-256:
 
 ```text
-fa4c698f0a8f69c2da99e993d0352aecb3118746cc7f6f61271d6a6d1a8946e3
+c3dd3434b30fb2c9b667f1cdf92f3b88fea6021cbf3672de61f6da483eee75e1
 ```
 
 ## 재패킹 ZIP 적용
 
 SHA-256 값이 맞는 원본 롬을 찾기 어려울 경우 재패킹 ZIP을 적용해주세요.
-ZIP에는 다음 구조의 교체 파일 **34개만** 들어 있습니다.
+ZIP에는 다음 구조의 교체 파일 **37개만** 들어 있습니다.
 
 ```text
 000400000019F600/
-├─ romfs/          # 번역·글꼴·이미지 교체 파일 33개
+├─ romfs/          # 번역·글꼴·이미지 교체 파일 36개
 └─ exefs/
    └─ icon.bin     # 게임 아이콘 1개
 ```
@@ -92,3 +101,4 @@ ZIP에는 다음 구조의 교체 파일 **34개만** 들어 있습니다.
 ## 글꼴 라이선스
 
 한글 글꼴은 `NanumSquareRoundR.ttf`를 바탕으로 만든 **GS4 Korean Round** 비트맵 글꼴입니다. [SIL Open Font License 1.1](licenses/NanumSquareRound-OFL.txt)을 따릅니다. 저작권 및 변경 안내는 [FONT-NOTICE.md](FONT-NOTICE.md)에 있습니다.
+

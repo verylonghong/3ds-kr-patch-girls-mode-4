@@ -1,28 +1,26 @@
-# 걸스 모드 4 한국어 패치 0.5
+# 걸스 모드 4 한국어 패치 0.6
 
-일본판 대상 한국어 패치입니다. xdelta와 재패킹 교체 파일 두 가지를 배포합니다.
+- xdelta: `GS4_Korean_v0.6_From_Japan_3DS.xdelta` — 7.05MiB
+- 재패킹: `GS4_Korean_Repack_v0.6.zip` — 54.61MiB
 
-- `GS4_Korean_v0.5_From_Japan_3DS.xdelta` — 약 4.55MiB
-- `GS4_Korean_Repack_v0.5.zip` — 약 12.37MiB
+- 번역·용어·띄어쓰기 및 미키피디아 링크·강조 범위를 정리했습니다.
+- 포스터·공연 문구·도장을 한글화하고 일부 UI 이미지와 후리가나 표시를 정리했습니다.
+- 보조 글꼴의 누락 글자를 보완하고 README 스크린샷을 갱신했습니다.
 
-기준 `.3ds`: `Girls Mode 4 - Star & Stylist (Japan).3ds` (1,073,741,824바이트)
+0.5 이후 번역 311개 파일·1,077개 메시지가 바뀌었으며, 전체 수정 이미지는 505개입니다.
+
+[0.5 이후 전체 변경 내역](https://github.com/verylonghong/3ds-kr-patch-girls-mode-4/blob/v0.6/CHANGELOG.md)에서 변경 요약과 문구별 상세 기록을 확인할 수 있습니다.
+
+기준 원본: `Girls Mode 4 - Star & Stylist (Japan).3ds` (1,073,741,824바이트)
 
 ```text
 SHA-256: c4e36a941c183633d93d7df40b10b23616dc0092334477c4b1d28264714e3b30
 ```
 
-### xdelta 패치 적용 결과
-
-- 파일명: `GS4_Korean_v0.5_WithManual.3ds`
-- 파일 크기: **824,578,048바이트**
-- SHA-256:
+적용 결과: `GS4_Korean_v0.6_WithManual.3ds` (825,569,280바이트, 원본 메뉴얼 포함)
 
 ```text
-fa4c698f0a8f69c2da99e993d0352aecb3118746cc7f6f61271d6a6d1a8946e3
+SHA-256: c3dd3434b30fb2c9b667f1cdf92f3b88fea6021cbf3672de61f6da483eee75e1
 ```
 
-번역 71,203개, 한글 글꼴 6개와 한글화·보정 이미지 491개를 반영했습니다. xdelta 적용 결과에는 원본 전자설명서와 파티션 6·7이 포함됩니다. 재패킹 ZIP은 `000400000019F600/` 아래에 RomFS 교체 파일 33개와 `exefs/icon.bin`만 포함합니다.
-
-xdelta 복원 결과의 SHA-256 일치와 재패킹 파일 해시를 검증했습니다. 게임 실행 검사는 하지 않았습니다.
-
-기준 원본 해시, 적용 방법과 글꼴 라이선스는 [README](https://github.com/verylonghong/3ds-kr-patch-girls-mode-4#readme)를 확인하세요.
+xdelta 복원 결과 일치와 재패킹 파일 해시를 검증했습니다. 게임 실행 검사는 하지 않았습니다.

@@ -1,0 +1,3 @@
+*.xdelta export-ignore
+GS4_Korean_Repack_*.zip export-ignore
+assets/ export-ignore
