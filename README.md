@@ -65,12 +65,12 @@ Get-FileHash -Algorithm SHA256 -LiteralPath 'Girls Mode 4 - Star & Stylist (Japa
 xdelta3로 다음과 같이 적용합니다.
 
 ```powershell
-xdelta3.exe -d -s "Girls Mode 4 - Star & Stylist (Japan).3ds" "GS4_Korean_v0.6_From_Japan_3DS.xdelta" "GS4_Korean_v0.6_WithManual.3ds"
+xdelta3.exe -d -s "Girls Mode 4 - Star & Stylist (Japan).3ds" "GS4_Korean_v0.6_From_Japan_3DS.xdelta" "GS4_Korean_v0.6.3ds"
 ```
 
 결과 파일은 **원본 전자설명서를 포함한 3DS 파일**입니다.
 
-- 결과 파일명: `GS4_Korean_v0.6_WithManual.3ds`
+- 결과 파일명: `GS4_Korean_v0.6.3ds`
 - 결과 크기: **825,569,280바이트**
 - 결과 SHA-256:
 
