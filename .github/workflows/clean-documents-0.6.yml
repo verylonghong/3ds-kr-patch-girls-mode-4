@@ -1,0 +1,28 @@
+name: Remove detailed change documents from v0.6
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/clean-documents-0.6.yml
+      - scripts/clean_documents_0_6.py
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-0.6
+  cancel-in-progress: false
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Remove release links and refresh source archives
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/clean_documents_0_6.py
+

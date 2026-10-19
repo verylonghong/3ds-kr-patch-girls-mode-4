@@ -9,8 +9,6 @@
 
 0.5 이후 번역 311개 파일·1,077개 메시지가 바뀌었으며, 전체 수정 이미지는 505개입니다.
 
-[0.5 이후 전체 변경 내역](https://github.com/verylonghong/3ds-kr-patch-girls-mode-4/blob/v0.6/CHANGELOG.md)에서 변경 요약과 문구별 상세 기록을 확인할 수 있습니다.
-
 기준 원본: `Girls Mode 4 - Star & Stylist (Japan).3ds` (1,073,741,824바이트)
 
 ```text
